@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700,700i");
+@font-face {
+  font-family: 'Liberation Sans';
+  src: url("../fonts/LiberationSans-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Liberation Sans';
+  src: url("../fonts/LiberationSans-Bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Liberation Sans';
+  src: url("../fonts/LiberationSans-BoldItalic-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: italic; }
+@font-face {
+  font-family: 'Liberation Sans';
+  src: url("../fonts/LiberationSans-Italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* CSS Document */
+body {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 16px;
+  color: #000; }
+  @media (min-width: 768px) {
+    body {
+      font-size: 18px; } }
+
+h1, h2 {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 2em;
+  font-weight: 700; }
+  h1.logo, h2.logo {
+    text-transform: lowercase; }
+  @media (min-width: 768px) {
+    h1, h2 {
+      margin-bottom: 0.25em;
+      font-size: 3em; } }
+
+h2 {
+  font-size: 1.333em;
+  margin-bottom: 0.5em; }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 1.778em; } }
+
+p {
+  line-height: 1.611;
+  margin-bottom: 1.15em; }
+
+a {
+  color: currentColor; }
+
+em {
+  font-style: italic; }
+
+strong {
+  font-weight: bold; }
+
+hr {
+  border: 0;
+  margin: 2em 0; }
+
+.highlight {
+  display: inline;
+  background-color: #000;
+  color: #fff; }
+
+button, .btn {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: normal;
+  cursor: pointer;
+  background: #eee;
+  padding: .75em 2em;
+  font-size: 1.333em;
+  border: 2px solid #000;
+  border-radius: 3em;
+  line-height: 1;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.15s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+  button::before, .btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #eee;
+    height: 100%;
+    width: 50%;
+    left: 50%;
+    top: -2px;
+    transform: translateX(-50%) scaleX(1);
+    z-index: 1;
+    box-sizing: content-box;
+    border-top: 3px solid #eee;
+    border-bottom: 3px solid #eee;
+    transition: transform 0.15s 0.15s ease-in-out;
+    transform-origin: center center; }
+  button > span, .btn > span {
+    display: inline-block;
+    position: relative;
+    z-index: 10; }
+  button:hover, button:focus, .btn:hover, .btn:focus {
+    background-color: #fff;
+    transition: background-color 0.15s 0.15s ease-out, color 0.15s 0.15s ease-out; }
+    button:hover::before, button:focus::before, .btn:hover::before, .btn:focus::before {
+      transform: translateX(-50%) scaleX(0);
+      transition: transform 0.15s ease-in-out; }
+  button:active, .btn:active {
+    transition: background-color 0.15s ease-out, color 0.15s ease-out;
+    background-color: #000;
+    color: #fff; }
+    button:active::before, .btn:active::before {
+      transform: translateX(-50%) scaleX(0); }
+  button.light, .btn.light {
+    background: #fff; }
+    button.light::before, .btn.light::before {
+      background: #fff;
+      border-top: 3px solid #fff;
+      border-bottom: 3px solid #fff; }
+    button.light:active, .btn.light:active {
+      transition: background-color 0.15s ease-out, color 0.15s ease-out;
+      background-color: #000;
+      color: #fff; }
+      button.light:active::before, .btn.light:active::before {
+        transform: translateX(-50%) scaleX(0); }
+  button::after, .btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0.75em;
+    top: 50%;
+    margin-top: -8px;
+    border: 8px solid transparent;
+    border-left-color: currentColor; }
+  @media (max-width: 1191px) {
+    button, .btn {
+      font-size: 1.05em; }
+      button::after, .btn::after {
+        right: 0.75em;
+        margin-top: -5px;
+        border: 5px solid transparent;
+        border-left-color: currentColor; } }
+
+header {
+  padding: 1em;
+  background: url(images/bg.png) top center no-repeat cover;
+  z-index: 50;
+  background-color: #eee; }
+  header .breach {
+    width: 100%;
+    height: 0.75em;
+    margin-bottom: 1em;
+    background: #000;
+    position: relative; }
+    header .breach::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 0.4em;
+      background: #fff;
+      left: 88.95%;
+      margin-left: -.4em; }
+  @media (min-width: 768px) {
+    header {
+      padding: 2.5em; } }
+  @media (min-width: 1192px) {
+    header {
+      position: fixed;
+      left: 0;
+      height: 100%;
+      width: calc(100% / 7 * 2);
+      text-align: center;
+      background: url("../images/bg.png") no-repeat top center #eee;
+      background-size: auto 100%;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center; }
+      header .logo {
+        padding-left: 0.65em; }
+      header .breach {
+        height: calc(100% - 5em);
+        position: absolute;
+        left: 2.5em;
+        width: 1em; }
+        header .breach::before {
+          height: 1em;
+          width: 100%;
+          left: auto;
+          top: 88.95%;
+          margin-left: 0;
+          margin-top: -0.5em; } }
+
+footer {
+  width: calc(100% / 7);
+  background: #fff;
+  color: #e6e6e6;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #000;
+  height: 100%; }
+  footer .logo-link {
+    position: absolute;
+    bottom: 5%;
+    display: block;
+    width: 10vw;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 6em; }
+    footer .logo-link svg {
+      max-width: 100%; }
+
+.main-content {
+  padding-right: calc(100% / 7); }
+  @media (min-width: 1192px) {
+    .main-content {
+      padding-left: calc(100% / 7 * 2); } }
+  .main-content > section {
+    padding: 1em;
+    max-width: 35em; }
+    @media (min-width: 768px) {
+      .main-content > section {
+        padding: 2.5em; } }
+    @media (min-width: 1192px) {
+      .main-content > section {
+        max-width: none;
+        width: 75%;
+        padding-bottom: 10em; } }
+
+.callout {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  text-align: center;
+  width: calc(100% / 7 * 6);
+  background: #fff;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15); }
+  .callout .callout-text {
+    font-family: "Anonymous Pro", monospace;
+    font-size: 1.25em;
+    padding-bottom: 1em;
+    display: block; }
+
+.visible-lg {
+  display: none; }
+  @media (min-width: 1192px) {
+    .visible-lg {
+      display: block; } }
+
+.hidden-lg {
+  display: block; }
+  @media (min-width: 1192px) {
+    .hidden-lg {
+      display: none; } }

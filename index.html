@@ -9,44 +9,101 @@
 </head>
 
 <body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=470599079618833';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	
+	window.twttr = (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0],
+		t = window.twttr || {};
+	  if (d.getElementById(id)) return t;
+	  js = d.createElement(s);
+	  js.id = id;
+	  js.src = "https://platform.twitter.com/widgets.js";
+	  fjs.parentNode.insertBefore(js, fjs);
+
+	  t._e = [];
+	  t.ready = function(f) {
+		t._e.push(f);
+	  };
+
+	  return t;
+	}(document, "script", "twitter-wjs"));</script>
 	<div class="main-content">
 		<header>
-<!--			<div class="breach"></div>-->
-			<h1 class="logo">Restore.</h1>
-			<hr class="visible-lg">
-			<a href="https://www.eventbrite.co.uk/e/restore-adventist-brum-squared-tickets-39344936765" class="btn visible-lg" title="Eventbrite" target="_blank"><span>Join the movement</span></a>
+			<div><svg viewBox="0 0 100 100" width="30%">
+			<g fill="none" stroke="currentColor" stroke-width="1">
+				<path d="M54.4,95.1c22.2,0,40.2-18,40.2-40.2s-18-40.2-40.2-40.2s-40.2,18-40.2,40.2S32.2,95.1,54.4,95.1
+					z"/>
+				<path d="M45.6,90.2c22.2,0,40.2-18,40.2-40.2S67.8,9.8,45.6,9.8S5.4,27.8,5.4,50
+					S23.4,90.2,45.6,90.2z"/>
+				<path d="M54.4,85.3c22.2,0,40.2-18,40.2-40.2S76.6,4.9,54.4,4.9s-40.2,18-40.2,40.2S32.2,85.3,54.4,85.3z
+					"/>
+			</g>
+			</svg>
+
+			<h1 class="logo">Restore</h1>
+			</div>
+			<a href="https://www.eventbrite.co.uk/e/restore-adventist-brum-squared-tickets-39344936765" class="btn visible-lg" title="Eventbrite" target="_blank"><span>Connect with the movement</span></a>
+<!--
+			
+			<div class="callout dark">
+				<div class="social">
+					<div class="fb-share-button" data-href="http://restoreproject.co.uk" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frestoreproject.co.uk%2F&amp;src=sdkpreparse">Share on Facebook</a></div>
+					<a class="twitter-share-button"
+					  href="https://twitter.com/intent/tweet?text=%22Church+is+more+than+a+building+you+go+to...%22+%23restoreproject"
+					  data-size="large">
+					Tweet</a>
+				</div>
+			</div>
+-->
 		</header>
 		<section>
-			<h2>We <em>still</em> don't get it.</h2>
-			<p>When it comes to understanding spiritual things, It’s ok to admit when we don’t get it. In fact it's really healthy to. It is this same humility that has enabled us to embark on a journey of understanding God’s love for us.</p>
-			<p>We believe that right now, across the world, God is helping people discover a richer and deeper experience of His love for them. God is raising up a movement of people who are determined to continually deepen their understanding; a people who are willing to make understanding God the focus of their lives. This calls us to stay curious, to have a willingness to listen and learn and to suspend our judgements that little bit longer. Through humble enquiry and by challenging our assumptions understanding can be restored. </p>
-			
-			<p>God wants to Restore Understanding.</p>
+			<div class="animation-container">
+				<ul class="circles">
 
-			<hr>
-			<h2>We’re not where we need to be. </h2>
-			<p>Taking time to evaluate our current condition is just as important as celebrating how far we’ve come. This is not about self-depreciation but about creating the space for continual growth. Everyone is unique and created with something that can be of value to others. Unfortunately however, people are often made to feel unwelcome, or like their contribution matter less. Often can stifle  others without realising it. We believe we can change this by being more intentional about create space for others even when they have different views to us.</p>
-			<p>When Jesus was establishing his church, he was committed to creating spaces where every type of person in society could feel at home around him; where people could genuinely enjoy being together; and where people were inspired to develop their characters. This is what the world needs now; a people who are willing to accommodate other people; a people who seek to assume the best of others; a people who would affirm the good they see in other people; a people who will reserve the space for God to Restore Character.</p>
-			<hr>
-			
-			<h2>The world hasn't felt it... yet.</h2>
-			<p>We do not want to be the kind of people who interact with others for the sole objective of getting them to believe the same thing that we do. 
-			This is not love and people can see straight through it. We believe this approach only perpetuates the prevailing belief that religion is irrelevant and doesn't meet real needs in today's world. </p>
-			<p>We believe true followers of Jesus show genuine interest in other people’s lives, being present and close enough to perceive their needs, recognising when these needs change, and responding with acts of selfless service.</p>
+					<li data-label="Understanding"></li>
+					<li data-label="Character"></li>
+					<li data-label="Action"></li>
+				</ul>
+				<div class="logo">restore</div>
+			</div>
+			<div class="center-push">
+				<p><strong>Restore is a movement</strong> of people who are seeking a deeper understanding of God, a home for the spiritually active and curious - hosted by Seventh-day Adventists.</p>
+				<p>Church is more than a building you go to, it’s a lifestyle of Christ-like intentionality. A movement people who God can reveal himself through daily. A people who know God and not just about God. </p>
+			</div>
 
-			<p>The world is waiting for a revelation of God’s character and we have been gifted a role to play in this story. This means radical care for the wellbeing of others through the everyday micro actions and interactions. From small individual acts of generosity and kindness to collective action through community projects and initiatives, we strive to make shared moments meaningful and special, fuelled by hope, optimism and abundance. [Add somewhere? To serve is to lead. To lead is to serve. Using friendship to share the gospel rather than being inspired by the gospel to build genuine friendships with people irrespective whether they convert or not.]</p>
-
-			<p>We recognise the need to come alongside each person on their unique journey towards a deeper connection with God. We are committed to creating a space for people to grow authentically and meaningfully regardless of who they are or how they identify where they are on their spiritual journey.</p>
-
-			<p>‘The heavenly universe is waiting for the members to become channels through which the current of life shall flow to the world, that many may...in their turn become channels through which the grace of Christ shall flow...”’ ChS 21</p>
-
-			<p>The world hasn’t felt it yet. There is so much more to be done. We must Restore Action	</p>		
+			<div class="flex-inline">
+				<div class="restore-card">
+					<h3>Understanding</h3>
+					<p>We believe that right now, across the world, God is helping people discover a richer and deeper experience of His love for them.</p>
+					<p>This calls us to stay curious, have a willingness to listen and learn and to suspend our judgements that little bit longer. Through humble enquiry and by challenging our assumptions understanding can be restored.</p>
+					<h4>&ldquo;It&rsquo;s possible that we still don&rsquo;t get it&rdquo;</h4>
+				</div>
+				<div class="restore-card">
+					<h3>Character</h3>
+					<p>We believe in creating space for people, even when they have different views to us.</p>
+					<p>What the world needs now is a people who will assume the best of others; affirm the good they see in other people; a people who will hold the space for others to live out their purpose and develop their character.</p>
+					<h4>&ldquo;Its possible that we&rsquo;re not where we need to be.&rdquo;</h4>
+				</div>
+				<div class="restore-card">
+					<h3>Action</h3>
+					<p>We strive to show genuine care for others, being present and close enough to perceive their needs, recognising when needs change, and responding with acts of selfless service.</p>
+					<p>From small individual acts of generosity and kindness to collective action, we seek to make shared moments meaningful and special, fuelled by hope, optimism and abundance.</p>
+					<h4>&ldquo;The world hasn&rsquo;t felt it yet&rdquo;</h4>
+				</div>
+			</div>
 			
 			<hr class="hidden-lg">
 			<hr class="hidden-lg">
 			<div class="callout hidden-lg">
 <!--				<span class="callout-text">Call to action text</span> -->
-				<a href="http://eventbrite.co.uk" class="btn light" title="Eventbrite" target="_blank"><span>Join the movement</span></a>
+				<a href="http://eventbrite.co.uk" class="btn light" title="Eventbrite" target="_blank"><span>Connect with the movement</span></a>
 			</div>
 		</section>
 	</div>
@@ -78,8 +135,6 @@
 			</svg>
 		</a>
 	</footer>
-	<script>
-		document.addEventListener("touchstart", function(){}, true);
-	</script>
+<!--	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>-->
 </body>
 </html>

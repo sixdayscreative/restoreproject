@@ -40,6 +40,25 @@ h2{
 	}
 }
 
+h3{
+	@extend h1;
+	font-size: 1.15em;
+	margin-bottom: 0.5em;
+	@media(min-width: 768px){
+		font-size: 1.5em;
+	}
+}
+h4{
+	@extend h1;
+	font-size: 1em;
+	margin-bottom: 0.5em;
+	font-weight: normal;
+	@media(min-width: 768px){
+		font-size: 1.25em;
+	}
+}
+
+
 p{
 	line-height: 1.611;
 	margin-bottom: 1.15em;
@@ -72,10 +91,9 @@ button, .btn{
 	font-family: $display-font;
 	font-weight: normal;
 	cursor: pointer;
-	background: #eee;
 	padding: .75em 2em;
 	font-size: 1.333em;
-	border: 2px solid #000;
+	border: 2px solid currentColor;
 	border-radius: 3em;
 	line-height: 1;
 	position: relative;
@@ -83,21 +101,25 @@ button, .btn{
 	display: inline-block;
 	text-align: center;
 	transition: background-color 0.15s ease-out;
-	&::before{
-		@include pseudo($pos: absolute);
-		background: #eee;
-		height: 100%;
-		width: 50%;	
-		left: 50%;
-		top: -2px;
-		transform: translateX(-50%) scaleX(1);
-		z-index: 1;
-		box-sizing: content-box;
-		border-top: 3px solid #eee;
-		border-bottom: 3px solid #eee;
-		transition: transform 0.15s 0.15s ease-in-out;
-		transform-origin: center center;
+	&.connect{ //needs white bg
+		background: #fff;
+		&::before{
+			@include pseudo($pos: absolute);
+			background: #eee;
+			height: 100%;
+			width: 50%;	
+			left: 50%;
+			top: -2px;
+			transform: translateX(-50%) scaleX(1);
+			z-index: 1;
+			box-sizing: content-box;
+			border-top: 3px solid #fff;
+			border-bottom: 3px solid #fff;
+			transition: transform 0.15s 0.15s ease-in-out;
+			transform-origin: center center;
+		}
 	}
+	
 	& > span{
 		display: inline-block;
 		position: relative;
@@ -136,7 +158,6 @@ button, .btn{
 		}
 	}
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	-webkit-tap-highlight-color: transparent;
 	&::after{
 		@include pseudo($pos: absolute);
 		right: 0.75em;
@@ -157,24 +178,10 @@ button, .btn{
 }
 header{
 	padding: 1em;
-	background: url(images/bg.png) top center no-repeat cover;
+	background: url(../images/ron-smith-372792.jpg) top center no-repeat #000;
+	background-size: cover;
 	z-index: 50;
-	background-color: #eee;
-	.breach{
-		width: 100%;
-		height: 0.75em;
-		margin-bottom: 1em;
-		background: #000;
-		position: relative;
-		&::before{
-			@include pseudo($pos: absolute);
-			height: 100%;
-			width: 0.4em;
-			background: #fff;
-			left: 88.95%;
-			margin-left: -.4em;
-		}
-	}
+	color: #fff;
 	@media(min-width: 768px){
 		padding: 2.5em;
 	}
@@ -184,7 +191,7 @@ header{
 		height: 100%;
 		width: calc(100% / 7 * 2);
 		text-align: center;
-		background:  url("../images/bg.png") no-repeat top center #eee;
+		background:  url("../images/ron-smith-372792.jpg") no-repeat bottom center #eee;
 		background-size: auto 100%;
 		display: -webkit-flex;
 		display: -moz-flex;
@@ -192,10 +199,15 @@ header{
 		display: -o-flex;
 		display: flex;
 		flex-flow: column;
-		justify-content: center;
-		align-items: center;
 		.logo{
-			padding-left: 0.65em;
+			&::after{
+				content: "";
+				display: inline-block;
+				height: 0.14em;
+				width: 0.14em;
+				background: currentColor;
+				border-radius: 50%;
+			}
 		}
 		.breach{
 			height: calc(100% - 5em);
@@ -215,7 +227,6 @@ header{
 }
 footer{
 	width: calc(100% / 7);
-	background: #fff;
 	color: #e6e6e6;
 	position: fixed;
 	right: 0;
@@ -235,6 +246,12 @@ footer{
 		}
 	}
 }
+.social{
+	text-align: center;
+	& > *{
+		vertical-align: top;
+	}
+}
 .main-content{
 	padding-right: calc(100% / 7);
 	@media(min-width: 1192px){
@@ -244,48 +261,69 @@ footer{
 		padding: 1em;
 		max-width: 35em;
 		@media(min-width: 768px){
-			padding: 2.5em;
+			padding: 0.25em 2.5em;
 		}
 		@media(min-width: 1192px){
 			max-width: none;
-			width: 75%;
-			padding-bottom: 10em;
 		}
 	}
 }
 .callout{
-	position: fixed;
 	bottom: 0;
 	left: 0;
 	padding: 1em;
+	width: 100%;
 	text-align: center;
-	width: calc(100% / 7 * 6);
-	background: #fff;
-	box-shadow: 0 -4px 8px rgba(0,0,0,0.15);
+	background: #000;
+	@media(min-width: 1192px){
+		position: absolute;
+		max-width: none;
+	}
+	.btn{
+		display: inline-block;	
+		margin-bottom: 1em;
+	}
 	.callout-text{
 		font-family: $display-font;
 		font-size: 1.25em;
 		padding-bottom: 1em;
 		display: block;
 	}
-//	@media(min-width: 1192px){
-//		position: fixed;
-//		bottom: 0;
-//		width: calc(100% / 7 * 4);
-//		left: calc(100% / 7 * 2);
-//		background: #fff;
-//		display: block;
-//		padding: 2.5em;
-//		text-align: left;
-//		.callout-text{
-//			font-family: $display-font;
-//			font-size: 1.5em;
-//			padding-bottom: 0;
-//			padding-right: 1em;
-//			display: inline;
-//		}
-//	}
 }
+
+.flex-inline{
+	@media (min-width: 1192px){
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+	}
+	width: 100%;
+	max-width: 60em;
+	margin: 0 auto;
+}
+
+.center-push{
+	max-width: 40em;
+	margin: 0 auto 4em;
+	text-align: center;
+}
+
+.restore-card{
+	display: block;
+	text-align: center;
+	padding: 1.5em 0.5em;
+	border-top: 0.5em solid #000;
+	@media (min-width: 1192px){
+		width: 32%;
+	}
+	p{
+		font-size: 0.75em;
+	}
+}
+
 .visible-lg{
 	display: none;
 	@media(min-width: 1192px){
@@ -297,4 +335,92 @@ footer{
 	@media(min-width: 1192px){
 		display: none;
 	}
+}
+
+
+/*RESTORE ANIMATION*/
+$circleSize: 20vh;
+$circleStroke: ($circleSize * 0.01);
+$circleColour: #000;
+$spinSpeed: 5s;
+$logoSize: ($circleSize / 7.5);
+
+.animation-container{
+	font-family: "Anonymous Pro", monospace;
+	position: relative;
+	.logo{
+		position: absolute;
+		font-weight: bold;
+		font-size: $logoSize;
+		width: 100%;
+		text-align: center;
+		color: #000000;
+		left: 0;
+		top: 50%;
+		margin-top: -($logoSize / 2);
+		&::after{
+			content: "";
+			display: inline-block;
+			height:0.16em;
+			width: 0.16em;
+			background: #000000;
+			border-radius: 50%;
+		}
+	}
+}
+
+.circles{
+	display: block;
+	height: $circleSize;
+	width: $circleSize;
+	position: relative;
+	margin: ((40vh - $circleSize) / 2) auto;
+}
+.circles li{
+    position: absolute;
+	height: 100%;
+	width: 100%;
+    border: $circleStroke solid $circleColour;
+    border-radius: 50%;
+    animation: $spinSpeed infinite alternate ease-in-out;
+	.circle-label{
+		position: absolute;
+		left: 50%;
+		display: none;
+		padding: 0.5em;
+		background: #000000;
+		color: #ffffff;
+		font-weight: bold;
+		font-size: ($circleSize / 10);
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+// collection of positions
+
+$distance : 1.5vh;
+
+$position:(
+    translate(-$distance, 0),
+    translate(($distance / 2), -($distance * 0.866)),
+    translate(($distance / 2), ($distance * .866))
+  );
+
+// loop through petals
+@for $i from 1 to length($position) + 1{
+  
+  .circles li:nth-child(#{$i}){
+    transform: nth($position, $i) scale(0.75);
+    animation-name: circle-#{$i};
+  }
+
+  // animate circle to previous position
+  $j: $i - 1;
+  @if $j == 0 { $j: 3; } // loop round array
+	$k: $i - 1;
+
+  // create animation for petal
+  @keyframes circle-#{$i}{ to{ transform: nth($position, $j) } }
+
 }

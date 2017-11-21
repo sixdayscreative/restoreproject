@@ -23,7 +23,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -66,14 +66,14 @@ body {
     body {
       font-size: 18px; } }
 
-h1, h2 {
+h1, h2, h3, h4 {
   font-family: "Anonymous Pro", monospace;
   font-size: 2em;
   font-weight: 700; }
-  h1.logo, h2.logo {
+  h1.logo, h2.logo, h3.logo, h4.logo {
     text-transform: lowercase; }
   @media (min-width: 768px) {
-    h1, h2 {
+    h1, h2, h3, h4 {
       margin-bottom: 0.25em;
       font-size: 3em; } }
 
@@ -83,6 +83,21 @@ h2 {
   @media (min-width: 768px) {
     h2 {
       font-size: 1.778em; } }
+
+h3 {
+  font-size: 1.15em;
+  margin-bottom: 0.5em; }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 1.5em; } }
+
+h4 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  font-weight: normal; }
+  @media (min-width: 768px) {
+    h4 {
+      font-size: 1.25em; } }
 
 p {
   line-height: 1.611;
@@ -110,10 +125,9 @@ button, .btn {
   font-family: "Anonymous Pro", monospace;
   font-weight: normal;
   cursor: pointer;
-  background: #eee;
   padding: .75em 2em;
   font-size: 1.333em;
-  border: 2px solid #000;
+  border: 2px solid currentColor;
   border-radius: 3em;
   line-height: 1;
   position: relative;
@@ -121,24 +135,25 @@ button, .btn {
   display: inline-block;
   text-align: center;
   transition: background-color 0.15s ease-out;
-  -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: transparent; }
-  button::before, .btn::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background: #eee;
-    height: 100%;
-    width: 50%;
-    left: 50%;
-    top: -2px;
-    transform: translateX(-50%) scaleX(1);
-    z-index: 1;
-    box-sizing: content-box;
-    border-top: 3px solid #eee;
-    border-bottom: 3px solid #eee;
-    transition: transform 0.15s 0.15s ease-in-out;
-    transform-origin: center center; }
+  button.connect, .btn.connect {
+    background: #fff; }
+    button.connect::before, .btn.connect::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: #eee;
+      height: 100%;
+      width: 50%;
+      left: 50%;
+      top: -2px;
+      transform: translateX(-50%) scaleX(1);
+      z-index: 1;
+      box-sizing: content-box;
+      border-top: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+      transition: transform 0.15s 0.15s ease-in-out;
+      transform-origin: center center; }
   button > span, .btn > span {
     display: inline-block;
     position: relative;
@@ -187,24 +202,10 @@ button, .btn {
 
 header {
   padding: 1em;
-  background: url(images/bg.png) top center no-repeat cover;
+  background: url(../images/ron-smith-372792.jpg) top center no-repeat #000;
+  background-size: cover;
   z-index: 50;
-  background-color: #eee; }
-  header .breach {
-    width: 100%;
-    height: 0.75em;
-    margin-bottom: 1em;
-    background: #000;
-    position: relative; }
-    header .breach::before {
-      content: "";
-      display: block;
-      position: absolute;
-      height: 100%;
-      width: 0.4em;
-      background: #fff;
-      left: 88.95%;
-      margin-left: -.4em; }
+  color: #fff; }
   @media (min-width: 768px) {
     header {
       padding: 2.5em; } }
@@ -215,18 +216,21 @@ header {
       height: 100%;
       width: calc(100% / 7 * 2);
       text-align: center;
-      background: url("../images/bg.png") no-repeat top center #eee;
+      background: url("../images/ron-smith-372792.jpg") no-repeat bottom center #eee;
       background-size: auto 100%;
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flex;
       display: -o-flex;
       display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center; }
-      header .logo {
-        padding-left: 0.65em; }
+      flex-flow: column; }
+      header .logo::after {
+        content: "";
+        display: inline-block;
+        height: 0.14em;
+        width: 0.14em;
+        background: currentColor;
+        border-radius: 50%; }
       header .breach {
         height: calc(100% - 5em);
         position: absolute;
@@ -242,7 +246,6 @@ header {
 
 footer {
   width: calc(100% / 7);
-  background: #fff;
   color: #e6e6e6;
   position: fixed;
   right: 0;
@@ -260,6 +263,11 @@ footer {
     footer .logo-link svg {
       max-width: 100%; }
 
+.social {
+  text-align: center; }
+  .social > * {
+    vertical-align: top; }
+
 .main-content {
   padding-right: calc(100% / 7); }
   @media (min-width: 1192px) {
@@ -270,27 +278,59 @@ footer {
     max-width: 35em; }
     @media (min-width: 768px) {
       .main-content > section {
-        padding: 2.5em; } }
+        padding: 0.25em 2.5em; } }
     @media (min-width: 1192px) {
       .main-content > section {
-        max-width: none;
-        width: 75%;
-        padding-bottom: 10em; } }
+        max-width: none; } }
 
 .callout {
-  position: fixed;
   bottom: 0;
   left: 0;
   padding: 1em;
+  width: 100%;
   text-align: center;
-  width: calc(100% / 7 * 6);
-  background: #fff;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15); }
+  background: #000; }
+  @media (min-width: 1192px) {
+    .callout {
+      position: absolute;
+      max-width: none; } }
+  .callout .btn {
+    display: inline-block;
+    margin-bottom: 1em; }
   .callout .callout-text {
     font-family: "Anonymous Pro", monospace;
     font-size: 1.25em;
     padding-bottom: 1em;
     display: block; }
+
+.flex-inline {
+  width: 100%;
+  max-width: 60em;
+  margin: 0 auto; }
+  @media (min-width: 1192px) {
+    .flex-inline {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: space-between; } }
+
+.center-push {
+  max-width: 40em;
+  margin: 0 auto 4em;
+  text-align: center; }
+
+.restore-card {
+  display: block;
+  text-align: center;
+  padding: 1.5em 0.5em;
+  border-top: 0.5em solid #000; }
+  @media (min-width: 1192px) {
+    .restore-card {
+      width: 32%; } }
+  .restore-card p {
+    font-size: 0.75em; }
 
 .visible-lg {
   display: none; }
@@ -303,3 +343,73 @@ footer {
   @media (min-width: 1192px) {
     .hidden-lg {
       display: none; } }
+
+/*RESTORE ANIMATION*/
+.animation-container {
+  font-family: "Anonymous Pro", monospace;
+  position: relative; }
+  .animation-container .logo {
+    position: absolute;
+    font-weight: bold;
+    font-size: 2.66667vh;
+    width: 100%;
+    text-align: center;
+    color: #000000;
+    left: 0;
+    top: 50%;
+    margin-top: -1.33333vh; }
+    .animation-container .logo::after {
+      content: "";
+      display: inline-block;
+      height: 0.16em;
+      width: 0.16em;
+      background: #000000;
+      border-radius: 50%; }
+
+.circles {
+  display: block;
+  height: 20vh;
+  width: 20vh;
+  position: relative;
+  margin: 10vh auto; }
+
+.circles li {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 0.2vh solid #000;
+  border-radius: 50%;
+  animation: 5s infinite alternate ease-in-out; }
+  .circles li .circle-label {
+    position: absolute;
+    left: 50%;
+    display: none;
+    padding: 0.5em;
+    background: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2vh;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+
+.circles li:nth-child(1) {
+  transform: translate(-1.5vh, 0) scale(0.75);
+  animation-name: circle-1; }
+
+@keyframes circle-1 {
+  to {
+    transform: translate(0.75vh, 1.299vh); } }
+.circles li:nth-child(2) {
+  transform: translate(0.75vh, -1.299vh) scale(0.75);
+  animation-name: circle-2; }
+
+@keyframes circle-2 {
+  to {
+    transform: translate(-1.5vh, 0); } }
+.circles li:nth-child(3) {
+  transform: translate(0.75vh, 1.299vh) scale(0.75);
+  animation-name: circle-3; }
+
+@keyframes circle-3 {
+  to {
+    transform: translate(0.75vh, -1.299vh); } }

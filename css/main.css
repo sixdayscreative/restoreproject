@@ -201,18 +201,36 @@ button, .btn {
         border-left-color: currentColor; } }
 
 header {
-  background: url(../images/ron-smith-372792.jpg) bottom center no-repeat #000;
+  background: url(../images/scott-webb-270034.jpg) bottom center no-repeat #000;
   background-size: cover;
   z-index: 50;
   color: #fff;
   text-align: center; }
-  @media (max-width: 1191px) {
-    header svg {
-      max-width: 6em; } }
   header > div {
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
-    padding: 1.5em 1em; }
+    height: 100%;
+    padding: 1.5em 1em;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    header > div .arrow {
+      position: absolute;
+      bottom: 3em;
+      animation: fade-in-out 1s ease alternate infinite; }
+  @media (max-width: 1191px) {
+    header {
+      height: 100vh; }
+      header svg {
+        max-width: 6em; }
+      header > div {
+        padding-bottom: 5em; } }
   header .logo {
     margin-bottom: 0.5em;
     text-align: center; }
@@ -226,16 +244,7 @@ header {
       left: 0;
       height: 100%;
       width: calc(100% / 7 * 2);
-      background: url("../images/scott-webb-270034.jpg") no-repeat bottom center #eee;
-      background-size: auto 100%;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      display: -o-flex;
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center; }
+      background-size: auto 100%; }
       header .logo {
         margin-bottom: 1em; }
         header .logo::after {
@@ -247,23 +256,30 @@ header {
           border-radius: 50%; } }
 
 footer {
-  width: calc(100% / 7);
   color: #e6e6e6;
-  position: fixed;
-  right: 0;
-  top: 0;
   background: #000;
-  height: 100%; }
-  footer .logo-link {
-    position: absolute;
-    bottom: 5%;
-    display: block;
-    width: 10vw;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 6em; }
-    footer .logo-link svg {
-      max-width: 100%; }
+  padding: 1em;
+  text-align: right; }
+  footer svg {
+    width: 3em; }
+  @media (min-width: 768px) {
+    footer {
+      width: calc(100% / 7);
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%; }
+      footer .logo-link {
+        position: absolute;
+        bottom: 5%;
+        display: block;
+        width: 10vw;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 6em; }
+        footer .logo-link svg {
+          max-width: 100%;
+          width: auto; } }
 
 .social {
   padding-top: 2em;
@@ -271,21 +287,22 @@ footer {
   .social > * {
     vertical-align: top; }
 
-.main-content {
-  padding-right: calc(100% / 7); }
+@media (min-width: 768px) {
+  .main-content {
+    padding-right: calc(100% / 7); } }
+@media (min-width: 1192px) {
+  .main-content {
+    padding-left: calc(100% / 7 * 2); } }
+.main-content > section {
+  padding: 1em;
+  max-width: 35em;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .main-content > section {
+      padding: 0.25em 2.5em; } }
   @media (min-width: 1192px) {
-    .main-content {
-      padding-left: calc(100% / 7 * 2); } }
-  .main-content > section {
-    padding: 1em;
-    max-width: 35em;
-    margin: 0 auto; }
-    @media (min-width: 768px) {
-      .main-content > section {
-        padding: 0.25em 2.5em; } }
-    @media (min-width: 1192px) {
-      .main-content > section {
-        max-width: none; } }
+    .main-content > section {
+      max-width: none; } }
 
 .callout {
   bottom: 0;
@@ -328,11 +345,11 @@ footer {
 .restore-card {
   display: block;
   text-align: center;
-  padding: 1.5em 0.5em;
-  border-top: 0.5em solid #000; }
+  padding: 1.5em 0.5em; }
   @media (min-width: 1192px) {
     .restore-card {
-      width: 32%; } }
+      width: 32%;
+      border-top: 0.5em solid #000; } }
   .restore-card p {
     font-size: 0.75em; }
 

@@ -177,21 +177,42 @@ button, .btn{
 	}
 }
 header{
-	background: url(../images/ron-smith-372792.jpg) bottom center no-repeat #000;
+	background: url(../images/scott-webb-270034.jpg) bottom center no-repeat #000;
 	background-size: cover;
 	z-index: 50;
 	color: #fff;
 	text-align: center;
-	@media(max-width: 1191px){
-		svg{
-			max-width: 6em;
-		}
-	}
+	
+	
 	
 	& > div {
 		background: rgba(0,0,0,0.5);
 		width: 100%;
+		height: 100%;
 		padding: 1.5em 1em;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		.arrow{
+			position: absolute;
+			bottom: 3em;
+			animation: fade-in-out 1s ease alternate infinite;
+		}
+	}
+	@media(max-width: 1191px){
+		svg{
+			max-width: 6em;
+		}
+		height: 100vh;
+		&>div{
+			padding-bottom: 5em;
+		}
 	}
 	.logo{
 		margin-bottom: 0.5em;
@@ -208,16 +229,7 @@ header{
 		left: 0;
 		height: 100%;
 		width: calc(100% / 7 * 2);
-		background:  url("../images/scott-webb-270034.jpg") no-repeat bottom center #eee;
 		background-size: auto 100%;
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flex;
-		display: -o-flex;
-		display: flex;
-		flex-flow: column;
-		justify-content: center;
-		align-items: center;
 		.logo{
 			margin-bottom:1em;
 			&::after{
@@ -232,23 +244,32 @@ header{
 	}
 }
 footer{
-	width: calc(100% / 7);
 	color: #e6e6e6;
-	position: fixed;
-	right: 0;
-	top: 0;
 	background: #000;
-	height: 100%;
-	.logo-link{
-		position: absolute;
-		bottom: 5%;
-		display: block;
-		width: 10vw;
-		left: 50%;
-		transform: translateX(-50%);
-		max-width: 6em;
-		svg{
-			max-width: 100%;
+	padding: 1em;
+	text-align: right;
+	svg{
+		width: 3em;
+	}
+	
+	@media(min-width: 768px){
+		width: calc(100% / 7);
+		position: fixed;
+		right: 0;
+		top: 0;
+		height: 100%;
+		.logo-link{
+			position: absolute;
+			bottom: 5%;
+			display: block;
+			width: 10vw;
+			left: 50%;
+			transform: translateX(-50%);
+			max-width: 6em;
+			svg{
+				max-width: 100%;
+				width: auto;
+			}
 		}
 	}
 }
@@ -260,7 +281,9 @@ footer{
 	}
 }
 .main-content{
-	padding-right: calc(100% / 7);
+	@media(min-width: 768px){
+		padding-right: calc(100% / 7);
+	}
 	@media(min-width: 1192px){
 		padding-left: calc(100% / 7 * 2);
 	}
@@ -323,9 +346,9 @@ footer{
 	display: block;
 	text-align: center;
 	padding: 1.5em 0.5em;
-	border-top: 0.5em solid #000;
 	@media (min-width: 1192px){
 		width: 32%;
+		border-top: 0.5em solid #000;
 	}
 	p{
 		font-size: 0.75em;

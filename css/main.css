@@ -159,7 +159,7 @@ button, .btn {
     position: relative;
     z-index: 10; }
   button:hover, button:focus, .btn:hover, .btn:focus {
-    background-color: #fff;
+    background-color: #000;
     transition: background-color 0.15s 0.15s ease-out, color 0.15s 0.15s ease-out; }
     button:hover::before, button:focus::before, .btn:hover::before, .btn:focus::before {
       transform: translateX(-50%) scaleX(0);
@@ -201,48 +201,50 @@ button, .btn {
         border-left-color: currentColor; } }
 
 header {
-  padding: 1em;
-  background: url(../images/ron-smith-372792.jpg) top center no-repeat #000;
+  background: url(../images/ron-smith-372792.jpg) bottom center no-repeat #000;
   background-size: cover;
   z-index: 50;
-  color: #fff; }
+  color: #fff;
+  text-align: center; }
+  @media (max-width: 1191px) {
+    header svg {
+      max-width: 6em; } }
+  header > div {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 1.5em 1em; }
+  header .logo {
+    margin-bottom: 0.5em;
+    text-align: center; }
   @media (min-width: 768px) {
-    header {
-      padding: 2.5em; } }
+    header > div {
+      padding: 2.5em;
+      text-align: center; } }
   @media (min-width: 1192px) {
     header {
       position: fixed;
       left: 0;
       height: 100%;
       width: calc(100% / 7 * 2);
-      text-align: center;
-      background: url("../images/ron-smith-372792.jpg") no-repeat bottom center #eee;
+      background: url("../images/scott-webb-270034.jpg") no-repeat bottom center #eee;
       background-size: auto 100%;
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flex;
       display: -o-flex;
       display: flex;
-      flex-flow: column; }
-      header .logo::after {
-        content: "";
-        display: inline-block;
-        height: 0.14em;
-        width: 0.14em;
-        background: currentColor;
-        border-radius: 50%; }
-      header .breach {
-        height: calc(100% - 5em);
-        position: absolute;
-        left: 2.5em;
-        width: 1em; }
-        header .breach::before {
-          height: 1em;
-          width: 100%;
-          left: auto;
-          top: 88.95%;
-          margin-left: 0;
-          margin-top: -0.5em; } }
+      flex-flow: column;
+      justify-content: center;
+      align-items: center; }
+      header .logo {
+        margin-bottom: 1em; }
+        header .logo::after {
+          content: "";
+          display: inline-block;
+          height: 0.14em;
+          width: 0.14em;
+          background: currentColor;
+          border-radius: 50%; } }
 
 footer {
   width: calc(100% / 7);
@@ -264,6 +266,7 @@ footer {
       max-width: 100%; }
 
 .social {
+  padding-top: 2em;
   text-align: center; }
   .social > * {
     vertical-align: top; }
@@ -352,12 +355,16 @@ footer {
     position: absolute;
     font-weight: bold;
     font-size: 2.66667vh;
-    width: 100%;
+    display: block;
     text-align: center;
     color: #000000;
     left: 0;
     top: 50%;
-    margin-top: -1.33333vh; }
+    width: 100%;
+    margin-top: -1.33333vh;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    animation: fade-in-out 7.5s alternate infinite ease-in-out; }
     .animation-container .logo::after {
       content: "";
       display: inline-block;
@@ -379,37 +386,42 @@ footer {
   width: 100%;
   border: 0.2vh solid #000;
   border-radius: 50%;
-  animation: 5s infinite alternate ease-in-out; }
-  .circles li .circle-label {
-    position: absolute;
-    left: 50%;
-    display: none;
-    padding: 0.5em;
-    background: #000000;
-    color: #ffffff;
+  animation: 7.5s infinite forwards alternate cubic-bezier(0.8, 0, 0.2, 1);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center; }
+  .circles li::before {
+    content: attr(data-label);
+    display: block;
     font-weight: bold;
     font-size: 2vh;
-    top: 50%;
-    transform: translate(-50%, -50%); }
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    animation: fade-in-out 7.5s alternate-reverse forwards infinite ease-in-out; }
 
 .circles li:nth-child(1) {
-  transform: translate(-1.5vh, 0) scale(0.75);
+  transform: scale(1.25);
   animation-name: circle-1; }
 
 @keyframes circle-1 {
   to {
-    transform: translate(0.75vh, 1.299vh); } }
+    transform: translate(5.55556vh, 9.62222vh) scale(0.75); } }
 .circles li:nth-child(2) {
-  transform: translate(0.75vh, -1.299vh) scale(0.75);
+  transform: scale(1.25);
   animation-name: circle-2; }
 
 @keyframes circle-2 {
   to {
-    transform: translate(-1.5vh, 0); } }
+    transform: translate(-11.11111vh, 0) scale(0.75); } }
 .circles li:nth-child(3) {
-  transform: translate(0.75vh, 1.299vh) scale(0.75);
+  transform: scale(1.25);
   animation-name: circle-3; }
 
 @keyframes circle-3 {
   to {
-    transform: translate(0.75vh, -1.299vh); } }
+    transform: translate(5.55556vh, -9.62222vh) scale(0.75); } }
+@keyframes fade-in-out {
+  65%, 100% {
+    opacity: 0;
+    transform: scale(0.75); } }
